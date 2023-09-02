@@ -1,6 +1,6 @@
 import './App.css';
 import CartItem from './CartItem';
-import Weather from './Weather';
+// import Weather from './Weather';
 
 function App() {
   return (
