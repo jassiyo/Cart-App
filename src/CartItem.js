@@ -1,5 +1,6 @@
 import React from "react";
 class CartItem extends React.Component {
+  // state which save dynamice infomation in the form of components
   constructor() {
     super();
     this.state = {
@@ -9,12 +10,30 @@ class CartItem extends React.Component {
       img: "",
     };
   };
+
+  // function for increaing the quantity
   increaseQuantity=()=>{
-    // setstate form 1
+     // setstate form 1
     this.setState({
-      qty: this.state.qty +1
+      qty: this.state.qty + 1
     })
   };
+
+  // Decrease function for reducing the qutity on the product 
+  decreaseQuantity=()=>{  
+    if(this.state.qty>0){
+      this.setState({
+       qty: this.state.qty - 1
+      })
+    }
+  };
+  // Delete function for reducing the quantity to 0
+  deleteQuantity=()=>{
+    this.setState({
+      qty: 0
+    }) 
+  };
+
   render() {
     const { price, title, qty } = this.state;
     return (
@@ -38,11 +57,13 @@ class CartItem extends React.Component {
               className="action-icons"
               alt="decrease"
               src="https://cdn-icons-png.flaticon.com/128/1828/1828906.png"
+              onClick={this.decreaseQuantity}
             />
             <img
               className="action-icons"
               alt="delete"
               src="https://cdn-icons-png.flaticon.com/128/3405/3405244.png"
+              onClick={this.deleteQuantity}
             />
           </div>
         </div>
