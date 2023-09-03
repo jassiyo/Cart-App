@@ -1,15 +1,7 @@
 import React from "react";
 class CartItem extends React.Component {
   // state which save dynamice infomation in the form of components
-  constructor() {
-    super();
-    this.state = {
-      price: 999,
-      title: "Mobile Phone",
-      qty: 0,
-      img: "",
-    };
-  };
+ 
 
   // function for increaing the quantity
   increaseQuantity=()=>{
@@ -36,7 +28,7 @@ class CartItem extends React.Component {
   };
 
   render() {
-    const { price, title, qty } = this.state;
+    const { price, title, qty } = this.props.product;
     return (
       <div className="cart-item">
         <div className="left-block">
