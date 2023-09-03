@@ -24,3 +24,10 @@ body {
 .action-icons:hover {
   cursor: pointer;
 }
+
+/* Cart component */
+
+.cart{
+  display: flex;
+  flex-direction: column;
+}
