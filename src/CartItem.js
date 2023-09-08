@@ -1,11 +1,10 @@
 import React from "react";
-class CartItem extends React.Component {
+const CartItem = (props) => {
   // state which save dynamice infomation in the form of components
   
 
-  render() {
-    const { price, title, qty } = this.props.product;
-    const {product, onIncreaseQuantity, onDecreaseQuantity, onDeleteQuantity} = this.props;
+    const { price, title, qty } = props.product;
+    const {product, onIncreaseQuantity, onDecreaseQuantity, onDeleteQuantity} = props;
     return (
       <div className="cart-item">
         <div className="left-block">
@@ -16,7 +15,7 @@ class CartItem extends React.Component {
           <div style={{ color: "grey" }}>Rs. {price}</div>
           <div style={{ color: "grey" }}>Qty: {qty}</div>
           <div className="cart-item-actions">
-            {/*buttons*/}
+            
             <img
               className="action-icons"
               alt="increase"
@@ -39,7 +38,6 @@ class CartItem extends React.Component {
         </div>
       </div>
     );
-  }
 }
 
 
